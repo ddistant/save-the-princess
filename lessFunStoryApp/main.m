@@ -12,12 +12,6 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         /*
-         
-         14- use a grappling hook to get across. - you don’t have a grappling hook. what in the name of all magic would give you that idea?
-         
-         15- walk across verrrryyyyyyyyyyy slooowwwwwllllyyyyyyyyy. - The slower you walk, the creakier this bridge gets. You scoot backwards before it snaps in half. Now what?
-         
-         16 - cast a protection spell on yourself, but still walk across because you don’t want to test your luck. - Just as you get near the end of the bridge, a gigantic red-tailed hawk dive-bombs the structure, cracking it in half. Because of your spell, you’re able to moonwalk the last few steps to the other side.
         
         */
          
@@ -112,7 +106,7 @@ int main(int argc, const char * argv[]) {
                     
                 } else {
                     
-                    printf("\nYou creep silently by, the end of the Dark Forest in sight.\n\n");
+                    printf("\nYou creep silently by, the end of the Dark Forest in sight.\n");
                     
                     BOOL gold = NO;
                 }
@@ -136,7 +130,7 @@ int main(int argc, const char * argv[]) {
                 
                 //stick
                 
-                printf("\n\nYou use your trusty bo staff and drag it against the bottom of the river. There's something tugging at the stick, and suddenly you are pulled into the raging waves! A huge, reddish crocodile surfaces, and the last thing you see are his gleaming teeth before he takes a bite of your hiney. (And no one can survive without a hiney.)");
+                printf("You use your trusty bo staff and drag it against the bottom of the river. There's something tugging at the stick, and suddenly you are pulled into the raging waves! A huge, reddish crocodile surfaces, and the last thing you see are his gleaming teeth before he takes a bite of your hiney. (And no one can survive without a hiney.)");
                 
                 goto endGame;
                 
@@ -201,29 +195,37 @@ int main(int argc, const char * argv[]) {
         
         //oldBridge
     
-        printf("\nAn old, rickety bridge lies between you and the castle entrance. It looks very unstable. How do you cross?\n\n-0 Use a grappling hook to get across\n\n-1 Walk across verrrryyyyyyyyyyy slooowwwwwllllyyyyyyyyy\n\n-2 Cast a protection spell on yourself, but still walk across carefully because you don’t want to test your luck\n");
+        printf("\nAn old, rickety bridge lies between you and the castle entrance. It looks very unstable. How do you cross?\n\n-0 Use a grappling hook to get across\n\n-1 Walk across verrrryyyyyyyyyyy slooowwwwwllllyyyyyyyyy\n\n-2 Cast a protection and levitation spell on yourself, but still walk across carefully because you don’t want to test your luck\n\n");
         
         int oldBridge;
         
         scanf("%s", &oldBridge);
         
-        //grappling hook
+    oldBridge:
         
-        while (oldBridge != 2) {
+        //grappling hook
         
             if (oldBridge == 0) {
             
             printf("\nYou don’t have a grappling hook. what in the name of Fenrir's tooth would give you that idea?\n\n");
                 
+                goto oldBridge;
+                
+                //very slowly
+                
             } else if (oldBridge == 1) {
                 
                 printf("\nThe slower you walk, the creakier this bridge gets. You scoot backwards before it completely snaps in half. Now what?");
                 
+                goto oldBridge;
+                
+                //protection and levitation spell
+                
             } else if (oldBridge == 2) {
                 
-                printf("\nJust as you get near the end of the bridge, a gigantic red-tailed hawk dive-bombs the structure, cracking it in half. Because of your spell, you’re able to moonwalk the last few steps to the other side.)
+                printf("\nJust as you get near the end of the bridge, a gigantic red-tailed hawk dive-bombs the structure, cracking it in half. Because of your spell, you’re able to moonwalk the last few steps to the other side.\n\nIn hindsight, it probably would have been good to cast that spell earlier.\n\n");
+    
             }
-        }
         
     endGame:
         
