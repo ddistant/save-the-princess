@@ -12,15 +12,18 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         /*
-         >> An enormous platypus comes out from behind the dam, its beady eyes locking with yours. “I demand to know why you are here!” he screams exactly how you would think a platypus would sound.
          
-         -9 - “To slay the dragon and save the princess.” - “Well I won’t let that happen!” he yells and thwacks you with his tail. You barely manage to fight him off, and you’re forced to escape into the nearby Dark Forest (go to DarkForest2)
+         13 - else - “You have the voice of an angel . . . but you screwed up the words!” the creature bellows. He thumps you on the head with his dull beak and cooks you up into a savory human stew. On the plus side, you taste pretty good with some salt and pepper! THE END
          
-         -10 - “I brought you a gift,” you say. Thinking quickly, you snatch up a nearby rock. “It’s rock candy, a delicacy from the distant lands of, um, Wal-Mart.” The platypus snatches up the rock candy and devours it, choking to death . . . but not in a cute way, so you don’t have to feel bad about it.
+         ————————— An old, rickety bridge lies between you and the castle entrance. It looks very unstable. How do you cross?
          
-         11 - Sing a jaunty tune - “R-E-S-P-E-C-T, find out what it means to me,” you belt out. “R-E-S-P-E-C-T, take care …” um, what were those three letters again?
+         14- use a grappling hook to get across. - you don’t have a grappling hook. what in the name of all magic would give you that idea?
          
-         >>> */
+         15- walk across verrrryyyyyyyyyyy slooowwwwwllllyyyyyyyyy. - This works, surprisingly.
+         
+         16 - cast a protection spell on yourself, but still walk across because you don’t want to test your luck. - Just as you get near the end of the bridge, a gigantic red-tailed hawk dive-bombs the structure, cracking it in half. Because of your spell, you’re able to moonwalk the last few steps to the other side.
+        
+        */
          
         
         //Get user name and print it back
@@ -77,7 +80,7 @@ int main(int argc, const char * argv[]) {
             
             if (kindlingOrEnchantment == 0) {
                 
-                printf("\nThe Dark Forest is set ablaze by your hasty embers. You're forced to escape to the Red River.\n\n");
+                printf("\nThe Dark Forest is set ablaze by your hasty embers. You're forced to escape to the Red River.\n");
                 
                 goto redRiver;
                 
@@ -159,22 +162,50 @@ int main(int argc, const char * argv[]) {
                 
                     //'slay the dragon and save the princess'
                     
-                    printf("\n\n'Well I won’t let that happen!' it growls while thwacking you with its tail. You barely manage to fight him off, and you’re forced to escape into the nearby Dark Forest.\n\n");
+                    printf("\n'Well I won’t let that happen!' it growls while thwacking you with its tail. You barely manage to fight him off, and you’re forced to escape into the nearby Dark Forest.\n");
                     
                     goto darkForest2;
                     
+                    //'I brought you a gift'
+                    
                 } else if (platypusQuestion == 1) {
                     
-                    printf("Game over man! Game over!");
+                    printf("\n'I brought you a gift,' you say. Thinking quickly, you snatch up a nearby rock. 'It’s rock candy, a delicacy from the distant lands of, um, Wal-Mart.' The platypus snatches up the rock candy and devours it, choking to death ... but it's not like it was cute, so you don’t have to feel bad about it.\n");
                     
+                    //'Respect' by Aretha Franklin
+                    
+                } else {
+                    
+                    printf("\n'R-E-S-P-E-C-T, find out what it means to me,' you belt out. 'R-E-S-P-E-C-T, take care …' um, what were those three letters again?\n\n");
+                    
+                    char platypusRespectQuestion[256] = "tcb";
+                    
+                    char platypusRespectAnswer[256];
+                    
+                    scanf("%s", &platypusRespectAnswer);
+                    
+                    if (strcmp(platypusRespectQuestion, platypusRespectAnswer) == 0) {
+                        
+                        printf("\n'You have a terrible voice, but I do like that song, warrior poet!' the platypus says. It applauds you and gives you a bag of GOLD. Shiny!\n");
+                        
+                    } else {
+                        
+                        printf("\n'You have the voice of an angel ... but you screwed up the words!' the creature bellows. It thumps you on the head with his dull beak and cooks you up into a savory human stew. On the plus side, you taste pretty good with some salt and pepper!\n");
+                    
+                        goto endGame;
+                        
+                    }
                 }
             }
         }
         
+        //oldBridge
+    
+        printf("\nAn old, rickety bridge lies between you and the castle entrance. It looks very unstable. How do you cross?\n\n-0 Use a grappling hook to get across\n\n-1 ");
         
     endGame:
         
-        printf("\n\nTHE END");
+        printf("\nTHE END");
         
     }
     return 0;
