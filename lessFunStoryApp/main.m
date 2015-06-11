@@ -13,13 +13,9 @@ int main(int argc, const char * argv[]) {
         
         /*
          
-         13 - else - “You have the voice of an angel . . . but you screwed up the words!” the creature bellows. He thumps you on the head with his dull beak and cooks you up into a savory human stew. On the plus side, you taste pretty good with some salt and pepper! THE END
-         
-         ————————— An old, rickety bridge lies between you and the castle entrance. It looks very unstable. How do you cross?
-         
          14- use a grappling hook to get across. - you don’t have a grappling hook. what in the name of all magic would give you that idea?
          
-         15- walk across verrrryyyyyyyyyyy slooowwwwwllllyyyyyyyyy. - This works, surprisingly.
+         15- walk across verrrryyyyyyyyyyy slooowwwwwllllyyyyyyyyy. - The slower you walk, the creakier this bridge gets. You scoot backwards before it snaps in half. Now what?
          
          16 - cast a protection spell on yourself, but still walk across because you don’t want to test your luck. - Just as you get near the end of the bridge, a gigantic red-tailed hawk dive-bombs the structure, cracking it in half. Because of your spell, you’re able to moonwalk the last few steps to the other side.
         
@@ -172,6 +168,8 @@ int main(int argc, const char * argv[]) {
                     
                     printf("\n'I brought you a gift,' you say. Thinking quickly, you snatch up a nearby rock. 'It’s rock candy, a delicacy from the distant lands of, um, Wal-Mart.' The platypus snatches up the rock candy and devours it, choking to death ... but it's not like it was cute, so you don’t have to feel bad about it.\n");
                     
+                    BOOL gold = NO;
+                    
                     //'Respect' by Aretha Franklin
                     
                 } else {
@@ -188,6 +186,8 @@ int main(int argc, const char * argv[]) {
                         
                         printf("\n'You have a terrible voice, but I do like that song, warrior poet!' the platypus says. It applauds you and gives you a bag of GOLD. Shiny!\n");
                         
+                        BOOL gold = YES;
+                        
                     } else {
                         
                         printf("\n'You have the voice of an angel ... but you screwed up the words!' the creature bellows. It thumps you on the head with his dull beak and cooks you up into a savory human stew. On the plus side, you taste pretty good with some salt and pepper!\n");
@@ -201,7 +201,29 @@ int main(int argc, const char * argv[]) {
         
         //oldBridge
     
-        printf("\nAn old, rickety bridge lies between you and the castle entrance. It looks very unstable. How do you cross?\n\n-0 Use a grappling hook to get across\n\n-1 ");
+        printf("\nAn old, rickety bridge lies between you and the castle entrance. It looks very unstable. How do you cross?\n\n-0 Use a grappling hook to get across\n\n-1 Walk across verrrryyyyyyyyyyy slooowwwwwllllyyyyyyyyy\n\n-2 Cast a protection spell on yourself, but still walk across carefully because you don’t want to test your luck\n");
+        
+        int oldBridge;
+        
+        scanf("%s", &oldBridge);
+        
+        //grappling hook
+        
+        while (oldBridge != 2) {
+        
+            if (oldBridge == 0) {
+            
+            printf("\nYou don’t have a grappling hook. what in the name of Fenrir's tooth would give you that idea?\n\n");
+                
+            } else if (oldBridge == 1) {
+                
+                printf("\nThe slower you walk, the creakier this bridge gets. You scoot backwards before it completely snaps in half. Now what?");
+                
+            } else if (oldBridge == 2) {
+                
+                printf("\nJust as you get near the end of the bridge, a gigantic red-tailed hawk dive-bombs the structure, cracking it in half. Because of your spell, you’re able to moonwalk the last few steps to the other side.)
+            }
+        }
         
     endGame:
         
