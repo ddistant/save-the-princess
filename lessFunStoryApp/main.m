@@ -13,20 +13,6 @@ int main(int argc, const char * argv[]) {
         
         /*
          
-         —————————— In the castle, you come to two hallways: left or right?
-         
-         -17 left - You found the magic Sword of Greyfang the Brave!
-         
-         -18 right - You found the magic spear of Elthiar the Enchantress!
-         
-         ————————— The dragon is a huge, and the battle is glorious. Using your magic *sword/spear,* you thrust and parry with as much prowess as you can muster. How will you try to strike the final blow?
-         
-         -19 Jump from above - You run along the castle’s solid walls and leap from above. Unfortunately, the dragon is a big fan of Zelda and has seen Link do this move a thousand times. It opens its huge mouth and roasts you to a crisp. The dragon then throws out a copy of its mixtape, which isn’t sportsmanlike at all if you ask me. THE END.
-         
-         -20 Roll and attack from near the tail - Score! The dragon winces in pain and collapses. You are victorious!
-         
-         —————————— “Princess, I’ve come from near and far to win your hand!” She is quite beautiful, but her amber eyes have mysterious glint in them. “Oh have you? Well I have a surprise for you . . .” She transforms into a glowing, technologically advanced robot assassin! Damn, I bet you didn’t see that one coming! What are you gonna do??? How will you defeat her advanced programming???
-         
          -21- throw water on it - It’s a robot, not the Wicked Witch of the West. P.R.I.N.C.E.S.S. spins around and slices you badly. You’re bleeding heavily now.
          
          -22- give her GOLD - “I only take BITCOIN!” it prints to its face-console. P.R.I.N.C.E.S.S. spins around and slices you. You’re fading fast, what do you do?
@@ -44,7 +30,7 @@ int main(int argc, const char * argv[]) {
         
         printf("What is your first name?\n");
         
-        scanf("%s", &name);
+        scanf("%s", name);
         
         printf("\nAh, so you are %s the great warrior. ", name);
         
@@ -56,7 +42,7 @@ int main(int argc, const char * argv[]) {
         
         char challengeAnswer[256];
         
-        scanf("%s", &challengeAnswer);
+        scanf("%s", challengeAnswer);
         
         if (strcmp(challengeQuestion, challengeAnswer) == 0) {
             
@@ -196,7 +182,7 @@ int main(int argc, const char * argv[]) {
                     
                     char platypusRespectAnswer[256];
                     
-                    scanf("%s", &platypusRespectAnswer);
+                    scanf("%s", platypusRespectAnswer);
                     
                     if (strcmp(platypusRespectQuestion, platypusRespectAnswer) == 0) {
                         
@@ -246,7 +232,59 @@ int main(int argc, const char * argv[]) {
         
         //protection and levitation spell
         
-         printf("\nJust as you get near the end of the bridge, a gigantic red-tailed hawk dive-bombs the structure, cracking it in half. Because of your spell, you’re able to moonwalk the last few steps to the other side.\n\nIn hindsight, it probably would have been good to cast that spell earlier.\n\n");
+        printf("\nJust as you get near the end of the bridge, a gigantic red-tailed hawk dive-bombs the structure, cracking it in half. Because of your spell, you’re able to moonwalk the last few steps to the other side.\n\nIn hindsight, it probably would have been good to cast that spell earlier.\n\n");
+        
+        //castle entrance
+        
+        printf("You approach the castle entrance, and the grim, metal door swings open wide. Inside the castle, you come to two hallways: left or right?\n\n-0 Left\n\n-1 Right\n\n");
+        
+        int leftOrRight;
+        
+        scanf("%d", &leftOrRight);
+        
+        //left and find sword
+        
+        if (leftOrRight == 0) {
+            
+            printf("\nYou found the magic Sword of Greyfang the Brave!\n\n");
+            
+            char weapon[256] = "Greyfang's sword";
+            
+           printf("The dragon is a huge, and the battle is glorious. Using %s, you thrust and parry with as much prowess as you can muster. How will you try to strike the final blow?\n\n-0 Jump from above\n\n-1 Roll and attack from near the tail\n\n", weapon);
+            
+        //right and find spear
+            
+        } else {
+            
+            printf("\nYou found the magic spear of Elthiar the Enchantress!\n\n");
+            
+            char weapon[256] = "Elthiar's spear";
+            
+            printf("The dragon is a huge, and the battle is glorious. Using %s, you thrust and parry with as much prowess as you can muster. How will you try to strike the final blow?\n\n-0 Jump from above\n\n-1 Roll and attack from near the tail\n\n", weapon);
+            
+        }
+        
+        int jumpOrRoll;
+        
+        scanf("%d", &jumpOrRoll);
+        
+        //Jump from above
+        
+        if (jumpOrRoll == 0) {
+            
+            printf("\nYou run along the castle’s solid walls and leap from above. Unfortunately, the dragon is a big fan of Zelda and has seen Link do this move a thousand times. It opens its huge mouth, ignite its flames and roasts you to a crisp. The dragon then throws out a copy of its mixtape, which isn’t sportsmanlike at all if you ask me.\n");
+            
+            goto endGame;
+            
+        } else {
+            
+            printf("\nScore! Your magic weapon drives deep past the scaly armor and right into the beast's weak spot. The aggravated dragon winces in pain and thrashes to and fro, then finally collapses. You are victorious!\n\nAnd now to meet the princess ...\n\n");
+            
+        }
+        
+        printf("You enter a secret chamber behind the dragon's slain corpse.\n\n'Princess, I’ve come from near and far to win your hand!' you say bravely. She is quite beautiful, but her amber eyes have a mysterious glint in them.\n\n'Oh have you? You really think I need saving? Well I have a surprise for you ...'\n\nShe transforms into a glowing, technologically advanced robot assassin! Damn, I bet you didn’t see that one coming! What are you gonna do? How will you defeat her advanced Objective-C programming?!?!\n\n-0 Throw water on it\n\n-1 Give her GOLD\n\n-2 Remove a semicolon\n\n-3 Run!");
+        
+        
         
     endGame:
         
