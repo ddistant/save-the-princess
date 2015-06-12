@@ -12,6 +12,28 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         /*
+         
+         —————————— In the castle, you come to two hallways: left or right?
+         
+         -17 left - You found the magic Sword of Greyfang the Brave!
+         
+         -18 right - You found the magic spear of Elthiar the Enchantress!
+         
+         ————————— The dragon is a huge, and the battle is glorious. Using your magic *sword/spear,* you thrust and parry with as much prowess as you can muster. How will you try to strike the final blow?
+         
+         -19 Jump from above - You run along the castle’s solid walls and leap from above. Unfortunately, the dragon is a big fan of Zelda and has seen Link do this move a thousand times. It opens its huge mouth and roasts you to a crisp. The dragon then throws out a copy of its mixtape, which isn’t sportsmanlike at all if you ask me. THE END.
+         
+         -20 Roll and attack from near the tail - Score! The dragon winces in pain and collapses. You are victorious!
+         
+         —————————— “Princess, I’ve come from near and far to win your hand!” She is quite beautiful, but her amber eyes have mysterious glint in them. “Oh have you? Well I have a surprise for you . . .” She transforms into a glowing, technologically advanced robot assassin! Damn, I bet you didn’t see that one coming! What are you gonna do??? How will you defeat her advanced programming???
+         
+         -21- throw water on it - It’s a robot, not the Wicked Witch of the West. P.R.I.N.C.E.S.S. spins around and slices you badly. You’re bleeding heavily now.
+         
+         -22- give her GOLD - “I only take BITCOIN!” it prints to its face-console. P.R.I.N.C.E.S.S. spins around and slices you. You’re fading fast, what do you do?
+         
+         -23- remove a semicolon. - P.R.I.N.C.E.S.S. shuts down immediately and gives you error messages. Call a T.A., maybe? YOU WIN
+         
+         -24- Run! - Got away safely! THE END
         
         */
          
@@ -130,7 +152,7 @@ int main(int argc, const char * argv[]) {
                 
                 //stick
                 
-                printf("You use your trusty bo staff and drag it against the bottom of the river. There's something tugging at the stick, and suddenly you are pulled into the raging waves! A huge, reddish crocodile surfaces, and the last thing you see are his gleaming teeth before he takes a bite of your hiney. (And no one can survive without a hiney.)");
+                printf("\nYou use your trusty bo staff and drag it against the bottom of the river. There's something tugging at the stick, and suddenly you are pulled into the raging waves! A huge, reddish crocodile surfaces, and the last thing you see are his gleaming teeth before he takes a bite of your hiney. (And no one can survive without a hiney.)");
                 
                 goto endGame;
                 
@@ -199,33 +221,32 @@ int main(int argc, const char * argv[]) {
         
         int oldBridge;
         
-        scanf("%s", &oldBridge);
-        
-    oldBridge:
-        
-        //grappling hook
+        while (oldBridge < 2) {
+            
+            scanf("%d", &oldBridge);
+            
+            //grappling hook
         
             if (oldBridge == 0) {
             
-            printf("\nYou don’t have a grappling hook. what in the name of Fenrir's tooth would give you that idea?\n\n");
-                
-                goto oldBridge;
+            printf("\nYou don’t have a grappling hook. By the jaws of Fenrir! What would even give you that idea?\n\n");
                 
                 //very slowly
                 
             } else if (oldBridge == 1) {
                 
-                printf("\nThe slower you walk, the creakier this bridge gets. You scoot backwards before it completely snaps in half. Now what?");
+                printf("\nThe slower you walk, the creakier this bridge gets. You scoot backwards before it completely snaps in half. Now what?\n\n");
                 
-                goto oldBridge;
+            } else {
                 
-                //protection and levitation spell
+                break;
                 
-            } else if (oldBridge == 2) {
-                
-                printf("\nJust as you get near the end of the bridge, a gigantic red-tailed hawk dive-bombs the structure, cracking it in half. Because of your spell, you’re able to moonwalk the last few steps to the other side.\n\nIn hindsight, it probably would have been good to cast that spell earlier.\n\n");
-    
             }
+        }
+        
+        //protection and levitation spell
+        
+         printf("\nJust as you get near the end of the bridge, a gigantic red-tailed hawk dive-bombs the structure, cracking it in half. Because of your spell, you’re able to moonwalk the last few steps to the other side.\n\nIn hindsight, it probably would have been good to cast that spell earlier.\n\n");
         
     endGame:
         
