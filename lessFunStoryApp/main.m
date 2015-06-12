@@ -276,13 +276,40 @@ int main(int argc, const char * argv[]) {
             
             goto endGame;
             
+        //Roll behind dragon
+            
         } else {
             
             printf("\nScore! Your magic weapon drives deep past the scaly armor and right into the beast's weak spot. The aggravated dragon winces in pain and thrashes to and fro, then finally collapses. You are victorious!\n\nAnd now to meet the princess ...\n\n");
             
+        //princessFight
+            
         }
         
-        printf("You enter a secret chamber behind the dragon's slain corpse.\n\n'Princess, I’ve come from near and far to win your hand!' you say bravely. She is quite beautiful, but her amber eyes have a mysterious glint in them.\n\n'Oh have you? You really think I need saving? Well I have a surprise for you ...'\n\nShe transforms into a glowing, technologically advanced robot assassin! Damn, I bet you didn’t see that one coming! What are you gonna do? How will you defeat her advanced Objective-C programming?!?!\n\n-0 Throw water on it\n\n-1 Give her GOLD\n\n-2 Remove a semicolon\n\n-3 Run!");
+        printf("You enter a secret chamber behind the dragon's slain corpse.\n\n'Princess, I’ve come from near and far to win your hand!' you say bravely. She is quite beautiful, but her amber eyes have a mysterious glint in them.\n\n'Oh have you? You really think I need saving? Well I have a surprise for you ...'\n\nShe transforms into a glowing, technologically advanced robot assassin! Damn, I bet you didn’t see that one coming! What are you gonna do? How will you defeat her advanced Objective-C programming?!?!\n\n-0 Throw water on it\n\n-1 Give her GOLD\n\n-2 Remove a semicolon\n\n-3 Run!\n\n");
+        
+        int princessFight;
+        
+        scanf("%d", &princessFight);
+        
+        while (princessFight != 2) {
+            
+            //Throw water
+        
+            if (princessFight == 0) {
+            
+                printf("It’s a robot, not the Wicked Witch of the West. P.R.I.N.C.E.S.S. spins around and slices you badly with dual katanas. You’re bleeding heavily now.");
+            
+                scanf(("%d", &princessFight);
+                      
+                      //Give GOLD
+                  
+                      } else if (princessFight == 1) {
+                          
+                          
+                          
+                      }
+        }
         
         
         
