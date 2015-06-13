@@ -11,19 +11,6 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        /*
-         
-         -21- throw water on it - It’s a robot, not the Wicked Witch of the West. P.R.I.N.C.E.S.S. spins around and slices you badly. You’re bleeding heavily now.
-         
-         -22- give her GOLD - “I only take BITCOIN!” it prints to its face-console. P.R.I.N.C.E.S.S. spins around and slices you. You’re fading fast, what do you do?
-         
-         -23- remove a semicolon. - P.R.I.N.C.E.S.S. shuts down immediately and gives you error messages. Call a T.A., maybe? YOU WIN
-         
-         -24- Run! - Got away safely! THE END
-        
-        */
-         
-        
         //Get user name and print it back
         
         char name[256];
@@ -100,8 +87,6 @@ int main(int argc, const char * argv[]) {
                     
                     printf("\nDelicately, gently, with the hands of a warrior mage thief, you pluck one bag of gold from the ogre’s grasp. The monster starts to rouse, so you move on, the end of the Dark Forest in sight.\n\n");
                     
-                    BOOL gold = YES;
-                    
                 //wake ogre up for fight
                            
                 } else if (ogreStealFightRun == 1) {
@@ -115,8 +100,7 @@ int main(int argc, const char * argv[]) {
                 } else {
                     
                     printf("\nYou creep silently by, the end of the Dark Forest in sight.\n");
-                    
-                    BOOL gold = NO;
+
                 }
             }
             
@@ -170,8 +154,6 @@ int main(int argc, const char * argv[]) {
                     
                     printf("\n'I brought you a gift,' you say. Thinking quickly, you snatch up a nearby rock. 'It’s rock candy, a delicacy from the distant lands of, um, Wal-Mart.' The platypus snatches up the rock candy and devours it, choking to death ... but it's not like it was cute, so you don’t have to feel bad about it.\n");
                     
-                    BOOL gold = NO;
-                    
                     //'Respect' by Aretha Franklin
                     
                 } else {
@@ -186,9 +168,7 @@ int main(int argc, const char * argv[]) {
                     
                     if (strcmp(platypusRespectQuestion, platypusRespectAnswer) == 0) {
                         
-                        printf("\n'You have a terrible voice, but I do like that song, warrior poet!' the platypus says. It applauds you and gives you a bag of GOLD. Shiny!\n");
-                        
-                        BOOL gold = YES;
+                        printf("\n'You have a terrible voice, but I do like that song, warrior poet!' the platypus says. It applauds you and gives you a gold coin. Shiny!\n");
                         
                     } else {
                         
@@ -260,7 +240,7 @@ int main(int argc, const char * argv[]) {
             
             char weapon[256] = "Elthiar's spear";
             
-            printf("The dragon is a huge, and the battle is glorious. Using %s, you thrust and parry with as much prowess as you can muster. How will you try to strike the final blow?\n\n-0 Jump from above\n\n-1 Roll and attack from near the tail\n\n", weapon);
+            printf("The dragon is huge, and the battle is glorious. Using %s, you thrust and parry with as much prowess as you can muster. How will you try to strike the final blow?\n\n-0 Jump from above\n\n-1 Roll and attack from near the tail\n\n", weapon);
             
         }
         
@@ -298,19 +278,33 @@ int main(int argc, const char * argv[]) {
         
             if (princessFight == 0) {
             
-                printf("It’s a robot, not the Wicked Witch of the West. P.R.I.N.C.E.S.S. spins around and slices you badly with dual katanas. You’re bleeding heavily now.");
+                printf("\nIt’s a robot, not the Wicked Witch of the West. P.R.I.N.C.E.S.S. spins around and slices you badly with dual katanas. You’re bleeding heavily. What will you do now?\n\n");
             
-                scanf(("%d", &princessFight);
+                scanf("%d", &princessFight);
                       
-                      //Give GOLD
+            //Give GOLD
                   
-                      } else if (princessFight == 1) {
+            } else if (princessFight == 1) {
                           
+                printf("\n'I only take BITCOIN!' it prints to its face-console. P.R.I.N.C.E.S.S. spins around and slices you with its dual katanas. You’re fading fast, what do you do?\n\n");
                           
-                          
-                      }
+                scanf("%d", &princessFight);
+                
+            //Run!
+                
+            } else if (princessFight == 3) {
+                
+                printf("\nGot away safely!\n\n");
+                
+                goto endGame;
+                
+            }
+            
         }
+    
+    //Remove a semicolon
         
+        printf("\nP.R.I.N.C.E.S.S. shuts down immediately and gives you error messages. Ask a T.A. about it, maybe?\n\nYOU WIN!!!!!\n\nCONGRATULATIONS, BRAVE WARRIOR %s!!!!", name);
         
         
     endGame:
